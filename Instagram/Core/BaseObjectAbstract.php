@@ -55,6 +55,8 @@ abstract class BaseObjectAbstract {
         return $this->getId();
     }
 
+    public $raw_data;
+
     /**
      * Constructor
      * 
@@ -63,6 +65,7 @@ abstract class BaseObjectAbstract {
      * @access public
      */
     public function __construct( $data, \Instagram\Core\Proxy $proxy = null ) {
+        $this->raw_data = $data;
         $this->setData( $data );
         $this->proxy = $proxy;
     }
